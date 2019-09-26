@@ -1,0 +1,22 @@
+#!/bin/bash
+#PBS -S /bin/bash
+#PBS -N collect_all
+#PBS -q cai161
+#PBS -l nodes=1:ppn=20,walltime=300:00:00
+#PBS -M kouz@purdue.edu 
+#PBS -m abe
+#PBS -j oe
+
+
+echo "I ran on:"
+cat $PBS_NODEFILE
+#
+#cd to your work directory first (the fold where submitted the job)
+cd $PBS_O_WORKDIR
+
+#Run the input file.py
+module load anaconda/5.3.1-py37
+export PYTHONPATH=$HOME/.local/lib/python3.7/site-packages:$PYTHONPATH
+
+python collect_all.py
+#
