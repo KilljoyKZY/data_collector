@@ -40,7 +40,7 @@ except ImportError:
 
 
 
-API_KEY= "57EBwb8evSlYVWBevjZkIk9PSD5HJU6xE9ofdNYaM5I7H49mLQr_6A6sWvnBuLlPpFyyd6pBRoNDpa41X1b9wCCWohpXl8B1ucKev2BZC2D6BI8B0agi6i-DVx2WWnYx"
+API_KEY= ""
 
 
 # API constants, you shouldn't have to change these.
