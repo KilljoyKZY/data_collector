@@ -186,18 +186,18 @@ def save_data(state, city, name, d_type, data_url, datapath = "/depot/cai161/dat
     try:
         data_dict = find_data_dict(data_url)
     except:
-        print('Error retrieving data from url for city {}, company {}'.format(city, company))
+        print('Error retrieving data from url for city {}, name {}'.format(city, name))
     try:
         in_list = find_data_list(data_dict)
     except:
-        print('Error finding data list for city {}, company {}'.format(city, company))
+        print('Error finding data list for city {}, name {}'.format(city, name))
     try:
         if len(in_list)==0:
             pass
         else:
             write_csv(in_list, state, city, name, d_type, file_path)
     except:
-        print('Error saving data for city {}, company {}'.format(city, company))
+        print('Error saving data for city {}, name {}'.format(city, name))
 
 
 # In[39]:
@@ -232,7 +232,7 @@ def collect_from_df(df):
             d_type = df['type'].iloc[i]
             data_url = df['URL'].iloc[i]
             save_data(state, city, name, d_type, data_url, datapath = "/depot/cai161/data/Bike_Share_Data/GBFS_data/")
-        time.sleep(60.0 - ((time.time() - starttime) % 60.0))
+        time.sleep(120.0 - ((time.time() - starttime) % 120.0))
     
 
 
